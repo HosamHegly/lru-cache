@@ -13,6 +13,38 @@ i used a dictionary that contains nodes of a circular bidirectional linked list.
 ### **required:**
 python
 
+### examples:
+cache = lru_cache(2)
+
+cache[1] = 1 # cache is {1=1}
+
+cache[2] = 2 # cache is {1=1, 2=2}
+
+cache[1] # return 1
+
+cache[3] = 3 # LRU key was 2, evicts key 2, cache is {1=1, 3=3}
+
+cache[2] # Throws an exception (not found)
+
+cache[4] = 4 # LRU key was 1, evicts key 1, cache is {4=4, 3=3}
+
+cache[1] # Throws an exception (not found)
+
+cache[4] # return 4
+
+cache[3] # return 3
+
+cache[5] = 5 # LRU key was 4, evicts key 4, cache is {3=3, 5=5}
+
+cache[4] # Throws an exception (not found)
+
+cache[3] # return 3
+
+cache[5] # return 5
 
 ### **how to run:**
 clone and run lru_cache,py
+
+
+
+
